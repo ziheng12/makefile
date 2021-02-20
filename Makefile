@@ -1,27 +1,15 @@
 .PHONY:all clean
 
-SRCS = $(wildcard *.c)
-OBJS = $(SRCS:.c=.o)
-DEPS = $(SRCS:.c=.d)
-
-BIN  = quectel
-
-all:$(BIN) $(DEPS)
-ifneq ("$(wildcard $(DEPS))","")
-include $(DEPS)
-endif
-
-$(BIN):$(OBJS)
-	gcc -o $@ $^
-
-%.o:%.c
-	gcc -o $@ -c $(filter %.c,$^)
-	#gcc -o $@ -c $^
-
-%.d:%.c
-	gcc -MM $^ > $@
+all:
+	make -C ec20
+	make -C ec21
+	make -C ec25
+	make -C app
 
 clean:
-	rm -rf $(BIN) $(OBJS) $(DEPS)
+	rm -rf app/quectel.o app/quectel.d app/quectel
+	rm -rf ec20/ec20.o ec20/ec20.d
+	rm -rf ec21/ec21.o ec21/ec21.d
+	rm -rf ec25/ec25.o ec25/ec25.d
 	
 
