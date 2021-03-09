@@ -1,5 +1,7 @@
 .PHONY:all clean
 export BUILD_ROOT = $(shell pwd)
+export HEAD_PATH = $(BUILD_ROOT)/inc
+
 all:
 	make -C ec20
 	make -C ec21
