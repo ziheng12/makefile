@@ -10,6 +10,5 @@ all:
 
 
 clean:
-	rm -rf app/link_obj app/dep quectel
-	
-
+	rm -rf app/link_obj app/dep app/lib_obj quectel	
+	rm -rf lib/*.a
