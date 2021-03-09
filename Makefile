@@ -15,9 +15,9 @@ clean:
 
 install:
 	sudo cp quectel /usr/bin
-	sudo cp lib/*.so /usr/lib
-	sudo cp lib/ext_lib/*.so /usr/lib
+	sudo cp lib/libopenlinux.so /usr/lib
+	sudo cp lib/ext_lib/libspi.so /usr/lib
 
 uninstall:
 	sudo rm /usr/bin/quectel
-	sudo rm /usr/bin/libspi.so
+	sudo rm /usr/lib/libopenlinux.so /usr/lib/libspi.so
