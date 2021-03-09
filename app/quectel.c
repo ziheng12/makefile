@@ -2,6 +2,7 @@
 #include "ec20.h"
 #include "ec21.h"
 #include "ec25.h"
+#include "openlinux.h"
 
 int main()
 {
@@ -10,6 +11,7 @@ int main()
 	ec20();
 	ec21();
 	ec25();
-
+	openlinux_dll_init();
+	
 	return 0;
 }
