@@ -1,4 +1,4 @@
-.PHONY:all clean
+.PHONY:all clean install uninstall
 export BUILD_ROOT = $(shell pwd)
 export HEAD_PATH = $(BUILD_ROOT)/inc
 
@@ -12,3 +12,12 @@ all:
 clean:
 	rm -rf app/link_obj app/dep app/lib_obj quectel	
 	rm -rf lib/*.a lib/*.so
+
+install:
+	sudo cp quectel /usr/bin
+	sudo cp lib/*.so /usr/lib
+	sudo cp lib/ext_lib/*.so /usr/lib
+
+uninstall:
+	sudo rm /usr/bin/quectel
+	sudo rm /usr/bin/libspi.so
