@@ -1,3 +1,4 @@
 BIN = 
-
-include ../common.mk
+LIB =
+DLL =
+include $(BUILD_ROOT)/common.mk
