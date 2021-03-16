@@ -9,5 +9,9 @@ all:
 
 clean:
 	rm -rf app/link_obj app/dep quectel
+	rm ec20/*.d
+	rm ec21/*.d
+	rm ec25/*.d
+
 	
 
